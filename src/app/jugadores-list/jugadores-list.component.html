@@ -1,0 +1,14 @@
+<h3>{{titulo}}</h3>
+<hr/>
+
+<div *ngIf="!jugadores">
+  Cargando listado de jugadores...
+</div>
+<div *ngIf="jugadores">
+  <ul>
+    <li *ngFor="let jugador of jugadores">
+      <strong>{{jugador.Apellido}}, {{jugador.Nombre}}</strong>
+      <p>{{jugador.Nacionalidad}}</p>
+    </li>
+  </ul>
+</div>
