@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { JugadoresListComponent } from './jugadores-list/jugadores-list.component';
+import { JugadorAddComponent } from './jugador-add/jugador-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ErrorComponent,
-    JugadoresListComponent
+    JugadoresListComponent,
+    JugadorAddComponent
   ],
   imports: [
     BrowserModule,

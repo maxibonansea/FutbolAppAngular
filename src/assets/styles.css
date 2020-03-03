@@ -72,3 +72,7 @@
   border-top: 1px solid #eee;
   color: gray;
 }
+
+#form-jugador label{
+  margin-top: 10px;
+}
