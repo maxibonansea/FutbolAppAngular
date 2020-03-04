@@ -10,10 +10,3 @@ export class Jugador{
     public Nacionalidad: string,
   ){}
 }
-
-//IdJugador	integer($int32)
-//Nombre	string
-//Apellido	string
-//FechaNacimiento	string
-//Edad	integer($int32)
-//Nacionalidad	string

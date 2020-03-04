@@ -11,13 +11,37 @@ import { Jugador } from '../models/jugador';
 })
 export class JugadorAddComponent implements OnInit {
   public titulo: string;
+  public Jugador: Jugador;
 
-  constructor() {
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _jugadorService: JugadorService
+  ) {
     this.titulo = 'Crear un nuevo Jugador';
+    this.Jugador = new Jugador(0, '', '', '', 0, '');
    }
 
   ngOnInit() {
     console.log('jugador-add.component.ts cargado...');
+  }
+
+  onSubmit() {
+    console.log(this.Jugador);
+
+    this._jugadorService.addJugador(this.Jugador).subscribe(
+      (result : any) => {
+        if(result.IsSuccess != true){
+          console.log('Res Erro - ' + result);
+        } else{
+          this._router.navigate(['/home']);
+          console.log('Res OK - ' + result);
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
   }
 
 }

@@ -19,4 +19,13 @@ export class JugadorService{
     getJugadores(){
         return this._http.get(this.url+'Jugador/GetAll').map(res => res);
     }
+
+    addJugador(jugador: Jugador){
+      let json = JSON.stringify(jugador);
+      //let params = 'json='+json;
+      let headers = new HttpHeaders({'Content-Type': 'application/json'});
+      //let headers = new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded'});
+
+      return this._http.post(this.url+'Jugador/Insert', json, {headers: headers}).map(res => res);
+    }
 }

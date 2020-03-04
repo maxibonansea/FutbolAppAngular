@@ -1,24 +1,39 @@
 <h3>{{titulo}}</h3>
 <hr/>
 
-<form #formJugador="ngForm" class="col-lg-6" id="form-jugador">
-  <label>Nombres</label>
-  <input type="text" class="form-control" />
+<form #formJugador="ngForm" (ngSubmit)="onSubmit()" class="col-lg-6" id="form-jugador">
+  <label>
+    Nombres
+    <span *ngIf="!nombre.valid && nombre.touched" class="badge badge-danger">El Nombre es Obligatorio.</span>
+  </label>
+  <input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="Jugador.Nombre" class="form-control" required />
 
-  <label>Apellido</label>
-  <input type="text" class="form-control" />
+  <label>
+    Apellido
+    <span *ngIf="!apellido.valid && apellido.touched" class="badge badge-danger">El Apellido es Obligatorio.</span>
+  </label>
+  <input type="text" #apellido="ngModel" name="apellido" [(ngModel)]="Jugador.Apellido" class="form-control" required />
 
-  <label>Fecha de Nacimiento</label>
-  <input type="text" class="form-control" />
+  <label>
+    Fecha de Nacimiento
+    <span *ngIf="!fechanacimiento.valid && fechanacimiento.touched" class="badge badge-danger">La Fecha de Nacimiento es Obligatoria.</span>
+  </label>
+  <input type="text" #fechanacimiento="ngModel" name="fechanacimiento" [(ngModel)]="Jugador.FechaNacimiento" class="form-control" required />
 
-  <label>Edad</label>
-  <input type="text" class="form-control" />
+  <label>
+    Edad
+    <span *ngIf="!edad.valid && edad.touched" class="badge badge-danger">La Edad es Obligatoria.</span>
+  </label>
+  <input type="text" #edad="ngModel" name="edad" [(ngModel)]="Jugador.Edad" class="form-control" required />
 
-  <label>Nacionalidad</label>
-  <input type="text" class="form-control" />
+  <label>
+    Nacionalidad
+    <span *ngIf="!nacionalidad.valid && nacionalidad.touched" class="badge badge-danger">La Nacionalidad es Obligatoria.</span>
+  </label>
+  <input type="text" #nacionalidad="ngModel" name="nacionalidad" [(ngModel)]="Jugador.Nacionalidad" class="form-control" required />
 
   <br/>
-  <input type="submit" value="{{titulo}}" class="btn btn-success" />
+  <input type="submit" value="{{titulo}}" [disabled]="!formJugador.form.valid" class="btn btn-success" />
 </form>
 
 
