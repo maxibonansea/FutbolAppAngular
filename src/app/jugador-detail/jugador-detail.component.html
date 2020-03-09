@@ -1,0 +1,18 @@
+<h3>{{titulo}}</h3>
+<hr/>
+
+<div class="row" *ngIf="!Jugador">
+  <p>Cargando jugador...</p>
+</div>
+<div class="row" *ngIf="Jugador">
+  <div class="col-lg-8">
+    <h4>{{Jugador.Apellido}}, {{Jugador.Nombre}}</h4>
+    <p>{{Jugador.Edad}} años</p>
+    <p>{{Jugador.Nacionalidad}}</p>
+  </div>
+</div>
+<div class="row-fluid">
+  <p>
+    <a [routerLink]="['/jugadores']" class="btn btn-outline-primary" href="#" role="button">Volver</a>
+  </p>
+</div>

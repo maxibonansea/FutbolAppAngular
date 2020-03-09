@@ -5,10 +5,29 @@
   Cargando listado de jugadores...
 </div>
 <div *ngIf="jugadores">
-  <ul>
+
+  <div class="row">
+    <div class="col-lg-3" *ngFor="let jugador of jugadores">
+      <div class="img-thumbnail">
+        <!-- <img src="..." /> -->
+        <div class="img-thumbnail">
+          <h4>{{jugador.Apellido}}, {{jugador.Nombre}}</h4>
+          <p>{{jugador.Edad}} años</p>
+          <p>{{jugador.Nacionalidad}}</p>
+          <p>
+            <a [routerLink]="['/ver-jugador', jugador.IdJugador]" class="btn btn-outline-success" href="#" role="button">Ver</a>
+            <a [routerLink]="['/editar-jugador', jugador.IdJugador]" class="btn btn-outline-warning" href="#" role="button">Editar</a>
+            <a class="btn btn-outline-danger" href="#" role="button">Borrar</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <ul>
     <li *ngFor="let jugador of jugadores">
       <strong>{{jugador.Apellido}}, {{jugador.Nombre}}</strong>
       <p>{{jugador.Nacionalidad}}</p>
     </li>
-  </ul>
+  </ul> -->
 </div>

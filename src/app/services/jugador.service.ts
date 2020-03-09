@@ -20,6 +20,10 @@ export class JugadorService{
         return this._http.get(this.url+'Jugador/GetAll').map(res => res);
     }
 
+    getJugador(id){
+      return this._http.get(this.url+'Jugador/Get/'+id).map(res => res);
+  }
+
     addJugador(jugador: Jugador){
       let json = JSON.stringify(jugador);
       //let params = 'json='+json;

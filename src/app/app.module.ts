@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { JugadoresListComponent } from './jugadores-list/jugadores-list.component';
 import { JugadorAddComponent } from './jugador-add/jugador-add.component';
+import { JugadorDetailComponent } from './jugador-detail/jugador-detail.component';
+import { JugadorEditComponent } from './jugador-edit/jugador-edit.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { JugadorAddComponent } from './jugador-add/jugador-add.component';
     HomeComponent,
     ErrorComponent,
     JugadoresListComponent,
-    JugadorAddComponent
+    JugadorAddComponent,
+    JugadorDetailComponent,
+    JugadorEditComponent
   ],
   imports: [
     BrowserModule,
