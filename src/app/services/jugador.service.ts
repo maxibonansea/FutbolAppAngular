@@ -32,4 +32,10 @@ export class JugadorService{
 
       return this._http.post(this.url+'Jugador/Insert', json, {headers: headers}).map(res => res);
     }
+
+    editJugador(id, jugador: Jugador){
+      let json = JSON.stringify(jugador);
+      let headers = new HttpHeaders({'Content-Type': 'application/json'});
+      return this._http.post(this.url+'Jugador/Update', json, {headers: headers}).map(res => res);
+    }
 }

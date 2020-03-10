@@ -30,7 +30,7 @@ export class JugadorAddComponent implements OnInit {
     console.log(this.Jugador);
 
     this._jugadorService.addJugador(this.Jugador).subscribe(
-      (result : any) => {
+      (result: any) => {
         if(result.IsSuccess != true){
           console.log('Res Erro - ' + result);
         } else{
